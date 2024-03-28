@@ -17,6 +17,12 @@ dependencies:
   # https://pub.dev/packages/dio
   dio: ^5.4.2+1
 
+  # https://pub.dev/packages/easy_localization
+  easy_localization: ^3.0.5
+
+  # https://pub.dev/packages/easy_localization_loader
+  easy_localization_loader: ^2.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

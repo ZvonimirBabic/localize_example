@@ -1,30 +1,20 @@
+import 'dart:io';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:localize_example/utils/constants/locale_constants.dart';
+import 'package:localize_example/utils/multi_asset_locale_loader.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'localize_example_app.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+part 'main_initializer.dart';
+part 'main_localization.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const LocalizationExampleHomePage(),
-    );
-  }
-}
-
-class LocalizationExampleHomePage extends StatelessWidget {
-  const LocalizationExampleHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+void main() async {
+  await _Initializer.load();
+  runApp(
+    const AppLocalization(
+      child: LocalizeExampleApp(),
+    ),
+  );
 }
